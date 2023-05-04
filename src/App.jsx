@@ -196,17 +196,27 @@ export default App
 
 // //x=start v=each step too the right
 
-// const x1=2;
-// const v1=1;
-// const x2=1;
-// const v2=2;
+const x1=2;
+const v1=1;
+const x2=1;
+const v2=2;
 
-// console.log(kangaroo(x1, v1, x2, v2))
-
-
+console.log(kangaroo(x1, v1, x2, v2))
 
 
+// same problem as above, just wanted to do it with less code
 
+function kangaroo(x1, v1, x2, v2) {
+  const xDif =Math.abs(x1-x2);
+  const vDif =Math.abs(v1-v2);
+  // if both velocity and initial is smaller on one then they will never catch up.
+  if((x1-x2<0 && v1-v2<0)||(x1-x2>0 && v1-v2>0)){return"NO"}
+  // if the remainder is zero and the above is passed then they will overlap.
+if(xDif%vDif===0){return"YES"}
+//all other cases don't exist where they can overlap.
+else{return"NO"}
+}
+/////////////////////////////////////////////////
 
 
 
