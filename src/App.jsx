@@ -17,24 +17,24 @@ export default App
 
 
 
-const candles = [4,1,4,3]
+// const candles = [4,1,4,3]
 
 
 
-function birthdayCakeCandles(candles) {
-  // Write your code here
-  candles.sort((a,b)=> a-b).reverse()
-  let max=candles[0]
-  let maxNumber=1;
-for(let i =1; i<candles.length; i++){
-  if(candles[i]===max){
-    maxNumber++
-  }
+// function birthdayCakeCandles(candles) {
+//   // Write your code here
+//   candles.sort((a,b)=> a-b).reverse()
+//   let max=candles[0]
+//   let maxNumber=1;
+// for(let i =1; i<candles.length; i++){
+//   if(candles[i]===max){
+//     maxNumber++
+//   }
 
  
-}
-return(maxNumber)
-}
+// }
+// return(maxNumber)
+// }
 
 // console.log(birthdayCakeCandles(candles))
 
@@ -45,46 +45,46 @@ return(maxNumber)
 
 
 
-const time = "12:45:54PM";
+// const time = "12:45:54PM";
 
 
 
 
-function timeConversion(s) {
-  const length = s.length
-  const AMOrPM=(s.charAt(length-2))
-  let morning = s.slice(0,-2)
-  if(morning.slice(0,2)==="12"){
-    const sliceOfMorning=morning.slice(2)
-    const sAM= "00".concat(sliceOfMorning)
-    morning = sAM
-  }
-  let timeFormat =""
-let hours = parseInt(s.charAt(0).concat(s.charAt(1)))
-if(AMOrPM==="P"){
-  hours+=12
+// function timeConversion(s) {
+//   const length = s.length
+//   const AMOrPM=(s.charAt(length-2))
+//   let morning = s.slice(0,-2)
+//   if(morning.slice(0,2)==="12"){
+//     const sliceOfMorning=morning.slice(2)
+//     const sAM= "00".concat(sliceOfMorning)
+//     morning = sAM
+//   }
+//   let timeFormat =""
+// let hours = parseInt(s.charAt(0).concat(s.charAt(1)))
+// if(AMOrPM==="P"){
+//   hours+=12
   
-  if(s.slice(0,2)==="12"){
-    hours-=12
-  }
-  const stringHours= String(hours)
-  const sliceOfS= s.slice(2,-2)
-  const sPM= stringHours.concat(sliceOfS)
-  timeFormat=sPM
+//   if(s.slice(0,2)==="12"){
+//     hours-=12
+//   }
+//   const stringHours= String(hours)
+//   const sliceOfS= s.slice(2,-2)
+//   const sPM= stringHours.concat(sliceOfS)
+//   timeFormat=sPM
 
-}
+// }
 
-if(AMOrPM==="A"){
-timeFormat=morning  
-}
-
-
-
-return(timeFormat)
+// if(AMOrPM==="A"){
+// timeFormat=morning  
+// }
 
 
 
-}
+// return(timeFormat)
+
+
+
+// }
 
 
 // console.log(timeConversion(time))
@@ -96,44 +96,69 @@ return(timeFormat)
 // If the difference between the  and the next multiple of  is less than , round  up to the next multiple of .
 // If the value of  is less than , no rounding occurs as the result will still be a failing grade.
 
-const grades=[73, 67, 38, 33]
+// const grades=[73, 67, 38, 33]
 
-function gradingStudents(grades) {
+// function gradingStudents(grades) {
 
-  const formattedGrades=[]
+//   const formattedGrades=[]
   
-  grades.map(grade=>{
-    const modulusFive=grade%5-5;
-    if(grade<=37){
-      formattedGrades.push(grade)
-    }
-    if(grade>=38 && modulusFive >= -2){
-      grade+= Math.abs(modulusFive)
-      formattedGrades.push(grade)
-    }
+//   grades.map(grade=>{
+//     const modulusFive=grade%5-5;
+//     if(grade<=37){
+//       formattedGrades.push(grade)
+//     }
+//     if(grade>=38 && modulusFive >= -2){
+//       grade+= Math.abs(modulusFive)
+//       formattedGrades.push(grade)
+//     }
 
-    if(grade>=38 && modulusFive <= -3){
-      formattedGrades.push(grade)
+//     if(grade>=38 && modulusFive <= -3){
+//       formattedGrades.push(grade)
+//     }
+//   })
+//   return(formattedGrades)
+// }
+
+
+
+
+// console.log(gradingStudents(grades))
+
+
+
+
+function countApplesAndOranges(s, t, a, b, apples, oranges) {
+  let numberOfApplesOnHouse=0;
+  let numberOfOrangesOnHouse=0;
+
+  // Write your code here
+  apples.map(apple=>{
+    const x=apple+a;
+    if(s<=x && x<=t){
+      numberOfApplesOnHouse+=1;
     }
   })
-  return(formattedGrades)
+  oranges.map(orange=>{
+    const x=orange+b;
+    if(s<=x && x<=t){
+      numberOfOrangesOnHouse+=1;
+    }
+  })
+  console.log(numberOfApplesOnHouse )
+  console.log(numberOfOrangesOnHouse )
+
 }
+// s=house start t=house end a= apple start b=orange start
+
+const s= 7
+const t = 11
+const a = 5
+const b = 15 
+const apples=[-2,2,1]
+const oranges = [5,-6]
 
 
-
-
-console.log(gradingStudents(grades))
-
-
-
-
-
-
-
-
-
-
-
+countApplesAndOranges(s,t,a,b,apples,oranges)
 
 
 
