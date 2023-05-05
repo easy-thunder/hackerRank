@@ -220,42 +220,62 @@ export default App
 // numbers between
 //assume that b is greater than a
 
-function getTotalX(a, b) {
-  // Write your code here
-  let factorCount = 0
-  for (let i = a[a.length - 1]; i <= b[0]; i++) {
-      let boo = true;
-     a.map(num=> {
-          if ((i % num) !== 0) {
-              boo = false
-              return;
-          }
-      })
-     b.map(num=> {
-          if ((num % i) !== 0) {
-              boo = false
-              return;
-          }
-      })
-      if (boo) factorCount += 1
+// function getTotalX(a, b) {
+//   // Write your code here
+//   let factorCount = 0
+//   for (let i = a[a.length - 1]; i <= b[0]; i++) {
+//       let boo = true;
+//      a.map(num=> {
+//           if ((i % num) !== 0) {
+//               boo = false
+//               return;
+//           }
+//       })
+//      b.map(num=> {
+//           if ((num % i) !== 0) {
+//               boo = false
+//               return;
+//           }
+//       })
+//       if (boo) factorCount += 1
+//   }
+//   return factorCount
+// }
+
+// // get all values that either multiply into the factorial or that can be used to divide a value
+// //ie. 6,12 is what we are looking for in this problem
+// //3,4,24,48 would be 12 and 24
+// const a=[1]
+// const b=[100]
+
+// console.log(getTotalX(a,b)) 
+///////////////////////
+
+
+function breakingRecords(scores) {
+let bad=scores[0];
+let good=scores[0];
+let badTally=0;
+let goodTally=0;
+for(let i=1; i<scores.length; i++){
+  if(scores[i]>good){
+    good=scores[i]
+    goodTally+=1;
   }
-  return factorCount
+
+  if(scores[i]<bad){
+    bad=scores[i]
+    badTally+=1;
+  }
 }
 
-// get all values that either multiply into the factorial or that can be used to divide a value
-//ie. 6,12 is what we are looking for in this problem
-//3,4,24,48 would be 12 and 24
-const a=[1]
-const b=[100]
+return[goodTally, badTally]
+}
 
-console.log(getTotalX(a,b)) 
+const scores = [3, 4, 21, 36, 10, 28, 35, 5, 24, 42]
 
 
-
-
-
-
-
+console.log(breakingRecords(scores))
 
 
 
