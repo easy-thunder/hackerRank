@@ -252,46 +252,64 @@ export default App
 ///////////////////////
 
 
-function breakingRecords(scores) {
-let bad=scores[0];
-let good=scores[0];
-let badTally=0;
-let goodTally=0;
-for(let i=1; i<scores.length; i++){
-  if(scores[i]>good){
-    good=scores[i]
-    goodTally+=1;
-  }
+// function breakingRecords(scores) {
+// let bad=scores[0];
+// let good=scores[0];
+// let badTally=0;
+// let goodTally=0;
+// for(let i=1; i<scores.length; i++){
+//   if(scores[i]>good){
+//     good=scores[i]
+//     goodTally+=1;
+//   }
 
-  if(scores[i]<bad){
-    bad=scores[i]
-    badTally+=1;
+//   if(scores[i]<bad){
+//     bad=scores[i]
+//     badTally+=1;
+//   }
+// }
+
+// return[goodTally, badTally]
+// }
+
+// const scores = [3, 4, 21, 36, 10, 28, 35, 5, 24, 42]
+
+
+// console.log(breakingRecords(scores))
+
+
+//////////////////////////////////////
+
+
+
+
+const n=6;
+const k=3;
+const ar=[1, 3, 2, 6, 1, 2]
+
+// k is target to divide by
+//n = length of arr
+// sum of two in the array needs to add too k
+
+function divisibleSumPairs(n, k, ar) {
+  // Write your code here
+
+  let sums=[];
+  ar.map((number, index)=>{
+    let i=index;
+    for(i;i<n;i++){
+      console.log(i)
+      
+      if((ar[i]+number)%k===0&&i!==index){sums.push([number,ar[i]])}
   }
+})
+    return sums.length
+
+
 }
 
-return[goodTally, badTally]
-}
 
-const scores = [3, 4, 21, 36, 10, 28, 35, 5, 24, 42]
-
-
-console.log(breakingRecords(scores))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(divisibleSumPairs(n,k,ar))
 
 
 
