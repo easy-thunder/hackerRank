@@ -291,25 +291,79 @@ const ar=[1, 3, 2, 6, 1, 2]
 //n = length of arr
 // sum of two in the array needs to add too k
 
-function divisibleSumPairs(n, k, ar) {
-  // Write your code here
+// function divisibleSumPairs(n, k, ar) {
+//   // Write your code here
 
-  let sums=[];
-  ar.map((number, index)=>{
-    let i=index;
-    for(i;i<n;i++){
-      console.log(i)
+//   let sums=[];
+//   ar.map((number, index)=>{
+//     let i=index;
+//     for(i;i<n;i++){
+//       console.log(i)
       
-      if((ar[i]+number)%k===0&&i!==index){sums.push([number,ar[i]])}
+//       if((ar[i]+number)%k===0&&i!==index){sums.push([number,ar[i]])}
+//   }
+// })
+//     return sums.length
+
+
+// }
+
+
+
+
+// console.log(divisibleSumPairs(n,k,ar))
+
+
+const birds =[1,3,3,5,4,4,4]
+
+
+
+function migratoryBirds(arr) {
+  //sort first
+  const sortedBirds=arr.sort((a,b)=>a-b)
+
+  const uniqueBirds=Array.from(new Set(sortedBirds))
+  const sitings=[]
+  const highestType=parseInt(uniqueBirds.slice(-1))
+  for(let i=1; i<=highestType; i++){
+    sitings.push(0)
+  }
+
+  sortedBirds.map(bird=>{
+
+    sitings[bird-1]+=1
+  })
+  let max =0;
+  let maxIndex= 0;
+  // if tied we want to return the lower index of the highest value. we don't want 
+sitings.map((value, index)=>{
+  console.log(value, max,index,sitings)
+  if(value>max){
+    max=parseInt(value)
+    maxIndex=parseInt(index+1)
+    console.log("hit", max)
   }
 })
-    return sums.length
+  
 
+  return(maxIndex)
 
 }
 
 
-console.log(divisibleSumPairs(n,k,ar))
+
+
+console.log(migratoryBirds(birds))
+
+
+
+
+
+
+
+
+
+
 
 
 
