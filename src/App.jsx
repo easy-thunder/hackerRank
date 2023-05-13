@@ -1,25 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
 
 function App() {
-  return (
-    <>
-
-    </>
-  )
+  return <></>;
 }
 
-export default App
-
-
-
-
+export default App;
 
 // const candles = [4,1,4,3]
-
-
 
 // function birthdayCakeCandles(candles) {
 //   // Write your code here
@@ -31,24 +21,13 @@ export default App
 //     maxNumber++
 //   }
 
- 
 // }
 // return(maxNumber)
 // }
 
 // console.log(birthdayCakeCandles(candles))
 
-
-
-
-
-
-
-
 // const time = "12:45:54PM";
-
-
-
 
 // function timeConversion(s) {
 //   const length = s.length
@@ -63,7 +42,7 @@ export default App
 // let hours = parseInt(s.charAt(0).concat(s.charAt(1)))
 // if(AMOrPM==="P"){
 //   hours+=12
-  
+
 //   if(s.slice(0,2)==="12"){
 //     hours-=12
 //   }
@@ -75,17 +54,12 @@ export default App
 // }
 
 // if(AMOrPM==="A"){
-// timeFormat=morning  
+// timeFormat=morning
 // }
-
-
 
 // return(timeFormat)
 
-
-
 // }
-
 
 // console.log(timeConversion(time))
 // HackerLand University has the following grading policy:
@@ -101,7 +75,7 @@ export default App
 // function gradingStudents(grades) {
 
 //   const formattedGrades=[]
-  
+
 //   grades.map(grade=>{
 //     const modulusFive=grade%5-5;
 //     if(grade<=37){
@@ -119,13 +93,7 @@ export default App
 //   return(formattedGrades)
 // }
 
-
-
-
 // console.log(gradingStudents(grades))
-
-
-
 
 // function countApplesAndOranges(s, t, a, b, apples, oranges) {
 //   let numberOfApplesOnHouse=0;
@@ -153,14 +121,11 @@ export default App
 // const s= 7
 // const t = 11
 // const a = 5
-// const b = 15 
+// const b = 15
 // const apples=[-2,2,1]
 // const oranges = [5,-6]
 
-
 // countApplesAndOranges(s,t,a,b,apples,oranges)
-
-
 
 //number line jumps
 
@@ -184,12 +149,12 @@ export default App
 //     sortedArray[1].initial+=sortedArray[1].velocity
 //     recursion()
 //   }
-// //next two if statements are what I return 
+// //next two if statements are what I return
 // if(sortedArray[0].initial>sortedArray[1].initial){
 //   return "NO"
 // }
 // if(sortedArray[0].initial===sortedArray[1].initial){
-//     return "YES"    
+//     return "YES"
 // }
 
 // }
@@ -202,7 +167,6 @@ export default App
 // const v2=2;
 
 // console.log(kangaroo(x1, v1, x2, v2))
-
 
 // // same problem as above, just wanted to do it with less code
 
@@ -248,9 +212,8 @@ export default App
 // const a=[1]
 // const b=[100]
 
-// console.log(getTotalX(a,b)) 
+// console.log(getTotalX(a,b))
 ///////////////////////
-
 
 // function breakingRecords(scores) {
 // let bad=scores[0];
@@ -274,18 +237,13 @@ export default App
 
 // const scores = [3, 4, 21, 36, 10, 28, 35, 5, 24, 42]
 
-
 // console.log(breakingRecords(scores))
-
 
 //////////////////////////////////////
 
-
-
-
-const n=6;
-const k=3;
-const ar=[1, 3, 2, 6, 1, 2]
+const n = 6;
+const k = 3;
+const ar = [1, 3, 2, 6, 1, 2];
 
 // k is target to divide by
 //n = length of arr
@@ -299,72 +257,229 @@ const ar=[1, 3, 2, 6, 1, 2]
 //     let i=index;
 //     for(i;i<n;i++){
 //       console.log(i)
-      
+
 //       if((ar[i]+number)%k===0&&i!==index){sums.push([number,ar[i]])}
 //   }
 // })
 //     return sums.length
 
-
 // }
-
-
-
 
 // console.log(divisibleSumPairs(n,k,ar))
 
+// const birds =[1,3,3,5,4,4,4]
 
-const birds =[1,3,3,5,4,4,4]
+// function migratoryBirds(arr) {
+//   //sort first
+//   const sortedBirds=arr.sort((a,b)=>a-b)
+
+//   const uniqueBirds=Array.from(new Set(sortedBirds))
+//   const sitings=[]
+//   const highestType=parseInt(uniqueBirds.slice(-1))
+//   for(let i=1; i<=highestType; i++){
+//     sitings.push(0)
+//   }
+
+//   sortedBirds.map(bird=>{
+
+//     sitings[bird-1]+=1
+//   })
+//   let max =0;
+//   let maxIndex= 0;
+//   // if tied we want to return the lower index of the highest value. we don't want
+// sitings.map((value, index)=>{
+//   console.log(value, max,index,sitings)
+//   if(value>max){
+//     max=parseInt(value)
+//     maxIndex=parseInt(index+1)
+//     console.log("hit", max)
+//   }
+// })
+
+//   return(maxIndex)
+
+// }
+
+// console.log(migratoryBirds(birds))
+// first attempt
+function formingMagicSquare(s) {
+  // Write your code here
+  //1. if any ===15 they are immutable.
+  function recursive(array) {
+    const immutable = [];
+    const mutableIndexes = [];
+    const mutable = [];
+    let valueD0 = 0;
+    let valueD2 = 0;
+    const diagonal0 = {};
+    const diagonal2 = {};
+    for (let i = 0; i <= 2; i++) {
+      window["horizontal" + i] = {};
+      window["vertical" + i] = {};
+      let valueH = 0;
+      let valueV = 0;
+      valueD0 += array[i][i];
+      valueD2 += array[2 - i][i];
+      diagonal0.value = valueD0;
+      diagonal0["index" + i] = `${i}${i}`;
+      diagonal0["individualValue" + i] = array[i][i];
+      diagonal0.name = "diagonal0";
+      diagonal2.value = valueD2;
+      diagonal2["index" + i] = `${2 - i}${i}`;
+      diagonal2["individualValue" + i] = array[2 - i][i];
+      diagonal2.name = "diagonal2";
+
+      for (let j = 0; j <= 2; j++) {
+        valueH += array[i][j];
+        valueV += array[j][i];
+        window["horizontal" + i].value = valueH;
+        window["horizontal" + i][`index${j}`] = `${i}${j}`;
+        window["horizontal" + i][`individualValue${j}`] = array[i][j];
+
+        window["vertical" + i].value = valueV;
+        window["vertical" + i][`index${j}`] = `${j}${i}`;
+        window["vertical" + i][`individualValue${j}`] = array[j][i];
+      }
+    }
+
+    for (let i = 0; i <= 2; i++) {
+      if (diagonal2.value < 15) {
+        mutable.push(diagonal2);
+        mutableIndexes.push(diagonal2[`index` + i]);
+      }
+      if (diagonal0.value < 15) {
+        mutable.push(diagonal0);
+        mutableIndexes.push(diagonal0[`index` + i]);
+      }
+      if (window["horizontal" + i].value < 15) {
+        mutable.push(window["horizontal" + i]);
+        mutableIndexes.push(
+          window["horizontal" + i].index0,
+          window["horizontal" + i].index1,
+          window["horizontal" + i].index2
+        );
+      }
+      if (window["vertical" + i].value < 15) {
+        mutable.push(window["vertical" + i]);
+        mutableIndexes.push(
+          window["vertical" + i].index0,
+          window["vertical" + i].index1,
+          window["vertical" + i].index2
+        );
+      }
+
+      if (diagonal0.value === 15) {
+        immutable.push(diagonal0["index" + i]);
+      }
+      if (diagonal2.value === 15) {
+        immutable.push(diagonal2["index" + i]);
+      }
+      if (window["horizontal" + i].value === 15) {
+        immutable.push(window["horizontal" + i].value);
+      }
+      if (window["vertical" + i].value === 15) {
+        immutable.push(window["vertical" + i].value);
+      }
+    }
+
+    
+    
+
+    let previous;
+    const mutableIndexValues = [];
+
+const sortedMutableIndexes = mutableIndexes.sort((a,b)=>{return parseInt(a)-parseInt(b)})
+
+    sortedMutableIndexes.map((index) => {
+      if (index === previous) {
+        window[`count${index}`].count += 1;
+        window[`count${index}`]
+      } else {
+        previous = index;
+        window[`count${index}`] = { count: 1, index: index };
+        // console.log(window[`count${index}`])
+      }
+
+      mutableIndexValues.push(window[`count${index}`]);
+    });
+
+    let i = 0;
+    for (i; i < mutableIndexValues.length; i++) {
+      if(i===-1){break}
+      immutable.map((immutable) => {
+        if (mutableIndexValues[i].index === immutable) {
+          mutableIndexValues.splice(i, 1);
+          if(i>0){
+
+            i -= 1
+          }
+        }
+        if(i===-1){return}
+
+ 
+      });
+    }
+
+    const uniqueMutableIndexes = Array.from(new Set(mutableIndexValues));
+    
+    
+    const mutableSet= Array.from(new Set(mutable))
+
+    uniqueMutableIndexes.map((index) => {
+      mutableSet.map((count) => {
+        if (
+          index.index === count.index0 ||
+          index.index === count.index1 ||
+          index.index === count.index2
+        ) {
+
+        
 
 
+          if (index.changed) {
+            if(index.changed>15-count.value)
+             (index.changed = 15-count.value);
+          } 
 
-function migratoryBirds(arr) {
-  //sort first
-  const sortedBirds=arr.sort((a,b)=>a-b)
+          else {
+             (index.changed = 15-count.value);
+          }
+        }
+      });
+    });
 
-  const uniqueBirds=Array.from(new Set(sortedBirds))
-  const sitings=[]
-  const highestType=parseInt(uniqueBirds.slice(-1))
-  for(let i=1; i<=highestType; i++){
-    sitings.push(0)
+    uniqueMutableIndexes.map(index=>{
+      index.finalValue=index.count*index.changed
+    })
+    
+// console.log(uniqueMutableIndexes)
+    uniqueMutableIndexes.sort((a, b) => a.finalValue - b.finalValue).reverse();
+    return uniqueMutableIndexes;
   }
 
-  sortedBirds.map(bird=>{
+recursive(s)
+// console.log(recursive(s).length)
 
-    sitings[bird-1]+=1
-  })
-  let max =0;
-  let maxIndex= 0;
-  // if tied we want to return the lower index of the highest value. we don't want 
-sitings.map((value, index)=>{
-  console.log(value, max,index,sitings)
-  if(value>max){
-    max=parseInt(value)
-    maxIndex=parseInt(index+1)
-    console.log("hit", max)
-  }
-})
-  
 
-  return(maxIndex)
+//////////////////////////
+let finalAnswer=0
 
+while(recursive(s)[0].index!==null){
+  let magic=recursive(s)[0].index
+  finalAnswer+=recursive(s)[0].changed
+  s[magic[0]][magic[1]] +=recursive(s)[0].changed
+  recursive(s)
+  if(!recursive(s)[0]){break}
 }
 
+///////////////////////////////////////
+  return(finalAnswer)
+    
+}
+const square = [
+  [5, 3, 4],
+  [1, 5, 8],
+  [6, 4, 2],
+];
 
-
-
-console.log(migratoryBirds(birds))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(formingMagicSquare(square));
